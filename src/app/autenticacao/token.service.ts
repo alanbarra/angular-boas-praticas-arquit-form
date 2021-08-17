@@ -6,13 +6,11 @@ const KEY = 'token';
   providedIn: 'root',
 })
 export class TokenService {
-  constructor() {}
-
   retornaToken() {
     return localStorage.getItem(KEY) ?? '';
   }
 
-  saltaToken(token: string) {
+  salvaToken(token: string) {
     localStorage.setItem(KEY, token);
   }
 
@@ -23,4 +21,5 @@ export class TokenService {
   possuiToken() {
     return !!this.retornaToken();
   }
+  
 }
